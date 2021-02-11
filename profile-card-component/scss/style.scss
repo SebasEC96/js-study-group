@@ -1,0 +1,173 @@
+//------------IMPORTS---------------
+@import "./include-media";
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+//------------COLORS---------------
+$dark-cyan: hsl(185, 75%, 39%);
+$very-dark-desaturated-blue: hsl(229, 23%, 23%); // Nice name :)
+$dark-grayish-blue: hsl(227, 10%, 46%);
+$dark-gray: hsl(0, 0%, 59%);
+
+//------------STYLES---------------
+* {
+  font-family: "Kumbh Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: $dark-cyan;
+  height: 100vh;
+  overflow-y: hidden;
+  background-image: url("../images/bg-pattern-top.svg"),
+    url("../images/bg-pattern-bottom.svg");
+  background-size: 85rem;
+  background-position: top -50rem left -25rem, bottom -56rem right -20rem;
+  background-repeat: no-repeat;
+}
+
+.svg-top {
+  position: absolute;
+  top: -50%;
+  left: 0;
+}
+
+.svg-bottom {
+  position: absolute;
+  bottom: -50%;
+  right: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24rem;
+    width: 22rem;
+    border-radius: 1rem;
+
+    .card-header {
+      height: 9rem;
+      border-radius: 1rem 1rem 0 0;
+      background-image: url("../images/bg-pattern-card.svg");
+      display: flex;
+      justify-content: center;
+
+      img {
+        z-index: 2;
+        border: 0.4rem solid white;
+        border-radius: 100%;
+        margin-top: 5.5rem;
+        height: 6rem;
+        width: 6rem;
+      }
+    }
+
+    .card-content {
+      background-color: white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .username {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: $very-dark-desaturated-blue;
+        margin-top: 3.5rem;
+
+        span {
+          font-weight: 400;
+          color: $dark-gray;
+        }
+      }
+
+      .country {
+        margin-top: 0.75rem;
+        color: $dark-gray;
+        font-size: 0.9rem;
+      }
+    }
+
+    .card-footer {
+      background-color: white;
+      border-radius: 0 0 1rem 1rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding: 1.75rem 0;
+      border-top: 1px solid rgba(229, 231, 235, 1);
+
+      .footer-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        p {
+          color: $very-dark-desaturated-blue;
+          font-weight: 700;
+          font-size: 1.125rem;
+          padding-bottom: 0.5rem;
+        }
+
+        label {
+          color: $dark-gray;
+          font-size: 0.6rem;
+          letter-spacing: 0.1rem;
+        }
+      }
+    }
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 1rem;
+    font-size: 11px;
+    text-align: center;
+    a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
+
+//-----------------------MEDIA QUERIES------------------------
+
+@include media(">tablet", "<desktop") {
+  html,
+  body {
+    background-size: 50rem;
+    background-position: top -30rem left -10rem, bottom -30rem right -10rem;
+  }
+}
+
+@include media(">phone", "<=tablet") {
+  html,
+  body {
+    background-size: 40rem;
+    background-position: top -15rem left -20rem, bottom -15rem right -20rem;
+  }
+}
+
+@include media("<=phone") {
+  html,
+  body {
+    background-size: 36rem;
+    background-position: top -20rem left -22.5rem, bottom -20rem right -22.5rem;
+  }
+  .container {
+    .profile-card {
+      height: 24rem;
+      width: 20rem;
+    }
+  }
+}

@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  font-family: "Kumbh Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: #19a2ae;
+  height: 100vh;
+  overflow-y: hidden;
+  background-image: url("../images/bg-pattern-top.svg"), url("../images/bg-pattern-bottom.svg");
+  background-size: 85rem;
+  background-position: top -50rem left -25rem, bottom -56rem right -20rem;
+  background-repeat: no-repeat;
+}
+
+.svg-top {
+  position: absolute;
+  top: -50%;
+  left: 0;
+}
+
+.svg-bottom {
+  position: absolute;
+  bottom: -50%;
+  right: 0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.container .profile-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 24rem;
+  width: 22rem;
+  border-radius: 1rem;
+}
+
+.container .profile-card .card-header {
+  height: 9rem;
+  border-radius: 1rem 1rem 0 0;
+  background-image: url("../images/bg-pattern-card.svg");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .profile-card .card-header img {
+  z-index: 2;
+  border: 0.4rem solid white;
+  border-radius: 100%;
+  margin-top: 5.5rem;
+  height: 6rem;
+  width: 6rem;
+}
+
+.container .profile-card .card-content {
+  background-color: white;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .profile-card .card-content .username {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #2d3248;
+  margin-top: 3.5rem;
+}
+
+.container .profile-card .card-content .username span {
+  font-weight: 400;
+  color: #969696;
+}
+
+.container .profile-card .card-content .country {
+  margin-top: 0.75rem;
+  color: #969696;
+  font-size: 0.9rem;
+}
+
+.container .profile-card .card-footer {
+  background-color: white;
+  border-radius: 0 0 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 1.75rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.container .profile-card .card-footer .footer-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.container .profile-card .card-footer .footer-item p {
+  color: #2d3248;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding-bottom: 0.5rem;
+}
+
+.container .profile-card .card-footer .footer-item label {
+  color: #969696;
+  font-size: 0.6rem;
+  letter-spacing: 0.1rem;
+}
+
+.container .attribution {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 11px;
+  text-align: center;
+}
+
+.container .attribution a {
+  color: #3e52a3;
+}
+
+@media (min-width: 769px) and (max-width: 1439px) {
+  html,
+  body {
+    background-size: 50rem;
+    background-position: top -30rem left -10rem, bottom -30rem right -10rem;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 768px) {
+  html,
+  body {
+    background-size: 40rem;
+    background-position: top -15rem left -20rem, bottom -15rem right -20rem;
+  }
+}
+
+@media (max-width: 375px) {
+  html,
+  body {
+    background-size: 36rem;
+    background-position: top -20rem left -22.5rem, bottom -20rem right -22.5rem;
+  }
+  .container .profile-card {
+    height: 24rem;
+    width: 20rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

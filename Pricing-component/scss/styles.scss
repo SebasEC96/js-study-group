@@ -1,0 +1,383 @@
+//--------------------IMPORTS--------------------
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import "include-media";
+
+//--------------------COLORS--------------------
+// Primary
+$button-gradient: linear-gradient(
+  to right,
+  hsl(236, 72%, 79%),
+  hsl(237, 63%, 64%)
+);
+
+$card-gradient: linear-gradient(
+  to bottom,
+  hsl(236, 72%, 79%),
+  hsl(237, 63%, 64%)
+);
+
+// Neutral
+$purpleish: hsl(237, 63%, 64%);
+$very-light-grayish-blue: hsl(240, 78%, 98%);
+$light-grayish-blue: hsl(234, 14%, 74%);
+$grayish-blue: hsl(233, 13%, 49%);
+$dark-grayish-blue: hsl(232, 13%, 33%);
+
+//--------------------STYLES--------------------
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 20px;
+}
+
+body {
+  background-color: $very-light-grayish-blue;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+// SVG images
+.bg-top {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: -1;
+  max-height: 100vh;
+}
+
+.bg-bottom {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  z-index: -1;
+}
+// Main Section
+.pricing-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  // Title / Slider
+  .title-switch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+
+    h1 {
+      text-align: center;
+      color: $dark-grayish-blue;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+    // Slider
+    .button-switch {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+      .text-switch {
+        color: $light-grayish-blue;
+        margin: 0 0.5rem;
+        font-size: 0.75rem;
+      }
+    }
+  }
+  // Plans
+  .all-plans {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    // "plan" class applies to all plans
+    .plan {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 17.5rem;
+      height: 22rem;
+      border-radius: 10px;
+      // Plan title
+      h3 {
+        display: flex;
+        align-items: center;
+        font-size: 3.5rem;
+        color: $dark-grayish-blue;
+        margin: 0;
+
+        span {
+          font-size: 2rem;
+        }
+      }
+      // Plan characteristics
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 0;
+        color: $grayish-blue;
+        width: 100%;
+        margin: 0;
+
+        li {
+          margin: 1rem 0rem 1rem 0rem;
+          font-size: 0.75rem;
+        }
+
+        hr {
+          width: 100%;
+          height: 1px;
+          color: $light-grayish-blue;
+          background-color: $light-grayish-blue;
+          background: $light-grayish-blue;
+          border: none;
+        }
+      }
+      // Plan button
+      button {
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        border: 1px solid white;
+        border-radius: 0.25rem;
+        padding: 0.75rem;
+        width: 100%;
+
+        &:focus {
+          outline: 0;
+          border: 1px solid $dark-grayish-blue;
+        }
+      }
+    }
+    // Applies only to the basic and master plan
+    .basic,
+    .master {
+      background-color: white;
+      padding: 1rem 1.5rem;
+      margin: 0.5rem 0;
+
+      h2 {
+        color: $dark-grayish-blue;
+      }
+
+      button {
+        color: $very-light-grayish-blue;
+        background: $button-gradient;
+        cursor: pointer;
+
+        &:hover {
+          background: white;
+          color: $purpleish;
+          border: 1px solid $purpleish;
+          border-radius: 0.25rem;
+        }
+
+        &:active {
+          background: $button-gradient;
+          color: $very-light-grayish-blue;
+        }
+      }
+    }
+    // Applies only to the professional plan
+    .professional {
+      background: $card-gradient;
+      padding: 3rem 2rem;
+      height: 100%;
+
+      h2 {
+        color: $very-light-grayish-blue;
+      }
+
+      h3 {
+        color: $very-light-grayish-blue;
+      }
+
+      ul {
+        li {
+          color: $very-light-grayish-blue;
+        }
+      }
+
+      button {
+        background: $very-light-grayish-blue;
+        color: $purpleish;
+        cursor: pointer;
+
+        &:hover {
+          background: $button-gradient;
+          color: $very-light-grayish-blue;
+          border: 1px solid $very-light-grayish-blue;
+          border-radius: 0.25rem;
+        }
+
+        &:active {
+          background: $very-light-grayish-blue;
+          color: $purpleish;
+        }
+      }
+    }
+  }
+  // Copy
+  .attribution {
+    p {
+      font-size: 0.5rem;
+      text-align: center;
+    }
+
+    a {
+      font-size: 0.5rem;
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
+
+//--------------------MEDIA QUERIES--------------------
+
+@include media("<=tablet") {
+  body {
+    height: auto;
+  }
+
+  .bg-bottom {
+    display: none;
+  }
+
+  .pricing-section {
+    margin: 1rem;
+
+    .title-switch {
+      margin-bottom: 2rem;
+    }
+
+    .all-plans {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    .plan {
+      margin: 1rem 0;
+    }
+  }
+}
+
+@include media(">=tablet", "<desktop") {
+  .pricing-section {
+    .title-switch {
+      h1 {
+        text-align: center;
+        color: $dark-grayish-blue;
+        font-size: 1.5rem;
+        margin: 0.5rem;
+      }
+
+      .button-switch {
+        margin-bottom: 0.5rem;
+
+        .text-switch {
+          font-size: 0.7rem;
+          color: $light-grayish-blue;
+        }
+      }
+    }
+    .all-plans {
+      height: 20rem;
+      .plan {
+        width: 14rem;
+        height: 18rem;
+
+        h3 {
+          font-size: 2.5rem;
+          margin: 0;
+          span {
+            font-size: 1.5rem;
+          }
+        }
+
+        ul {
+          margin: 0.7rem;
+
+          li {
+            margin: 0.7rem 0rem 0.7rem 0rem;
+            font-size: 0.7rem;
+          }
+        }
+
+        button {
+          font-size: 0.5rem;
+          padding: 0.5rem;
+        }
+      }
+
+      .basic,
+      .master {
+        margin: 1rem 0;
+      }
+
+      .professional {
+        height: 100%;
+      }
+    }
+  }
+}
+
+//--------------------SWITCH BUTTON \ w3schools--------------------
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $button-gradient;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background: $button-gradient;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
